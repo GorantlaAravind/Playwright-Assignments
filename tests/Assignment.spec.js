@@ -16,7 +16,6 @@ test('Assignment Numberone',async({page})=>
 {
 
 await page.goto("https://eventhub.rahulshettyacademy.com");
-//await expect(page.locator(".text-xl")).toHaveText("Sign in to EventHub");
 await expect(page.getByRole("heading",{name:"Sign in to EventHub"})).toBeVisible();
 await expect(page.getByPlaceholder("you@email.com")).toBeVisible();
 await expect(page.locator("#login-btn")).toBeVisible();
@@ -28,5 +27,6 @@ await page.goto("https://eventhub.rahulshettyacademy.com");
 await expect(page).toHaveURL(/login/);
 await expect(page.locator("#password")).toBeVisible();
 await expect(page.getByRole("heading",{name:"Sign in to EventHub"})).toBeVisible();
+
 
 });

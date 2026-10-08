@@ -21,13 +21,20 @@ const config=({
     },
     reporter:'html',
   use:{
-    actionTimeot:10*1000,
+    baseURL:'https://eventhub.rahulshettyacademy.com',
+    actionTimeout:10*1000,
     navigationTimeout:30*1000,
-    browserName:'chromium',
+    //browserName:'chromium',
     headless:false,
     screenshot:'on',
     trace:'on'
 
-  }
+  },
+  retries: 1,
+  projects: [
+  { name: 'Chromium', use: { ...devices['Desktop Chrome'] } },
+  { name: 'Firefox', use: { ...devices['Desktop Firefox'] } },
+]
+
 });
 module.exports=config
